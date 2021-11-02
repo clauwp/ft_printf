@@ -1,5 +1,5 @@
 #include "ft_printf.h"
-#include <stdio.h>
+
 /*
 Main function that immitates the behaviour of printf from C standard library.
 Iters through each characters and processes it when it reaches '%' character.
@@ -144,11 +144,8 @@ int	print_int(char *format_str, unsigned long long i, char specifier)
 	char	*copy_retstr;
 
 	ret_str = convert_arg_to_str(i, specifier);
-	printf("line 147 %s\n",ret_str);
 	ret_str = add_precision(format_str, ret_str);
-	printf("%s\n",ret_str);
 	ret_str = add_flags(format_str, ret_str);
-	printf("%s\n",ret_str);
 	copy_retstr = ret_str;
 	retlen = ft_strlen(ret_str);
 	if (specifier == 'c' && i == 0)
