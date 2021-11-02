@@ -13,6 +13,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void *))
 	t_list	*current_list;
 
 	current_list = *lst;
+	next_list = current_list->next;
 	while (next_list)
 	{
 		next_list = current_list->next;
