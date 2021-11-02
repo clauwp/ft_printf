@@ -9,7 +9,7 @@ static int	ft_findlen(unsigned long long n, int base)
 	count = 0;
 	while (n != 0)
 	{
-		n = n / base;
+		n = n / (unsigned long long) base;
 		count++;
 	}
 	return (count);

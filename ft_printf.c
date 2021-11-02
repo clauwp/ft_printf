@@ -153,6 +153,7 @@ int	print_int(char *format_str, unsigned long long i, char specifier)
 		write(1, "\0", 1);
 		retlen = 1;
 	}
+	printf("[%s]\n", ret_str);
 	while (*ret_str)
 		write(1, ret_str++, 1);
 	free(copy_retstr);

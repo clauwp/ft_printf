@@ -76,6 +76,5 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 	}
 	else
 		retstr = temp_ptr;
-	printf("%s\n",retstr);
 	return (retstr);
 }
