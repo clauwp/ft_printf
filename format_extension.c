@@ -161,7 +161,7 @@ char	*left_fill(char *current_str, int i, char flag)
 		}
 		while (*current_str)
 			*retstr++ = *current_str++;
-		retstr = '\0';
+		*retstr = '\0';
 		free(copy_current);
 		return (copy_retstr);
 	}
