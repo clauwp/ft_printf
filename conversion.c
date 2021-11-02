@@ -64,15 +64,17 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 		retstr = ft_strjoin(p_ammend, temp_ptr);
 		free(temp_ptr);
 	}
+	else if (specifier == 'X')
+	{
+		temp_ptr = ft_uitoa_base((int) i, 16);
+		retstr = temp_ptr;
+		while (*temp_ptr)
+			ft_toupper(temp_ptr++);
+	}
 	else
 	{
 		temp_ptr = ft_uitoa_base((int) i, 16);
 		retstr = temp_ptr;
-	}
-	if (specifier == 'X')
-	{
-		while (*temp_ptr)
-			ft_toupper(temp_ptr++);
 	}
 	return (retstr);
 }
