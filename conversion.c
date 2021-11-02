@@ -28,7 +28,7 @@ a string that contains the unsigned hexadecimal converted from an integer
 */
 char    *u_conversion(unsigned long long i)
 {
-	return (ft_uitoa_base((int) i, 10));
+	return (ft_uitoa_base(i, 10));
 }
 
 /*
@@ -66,14 +66,14 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 	}
 	else if (specifier == 'X')
 	{
-		temp_ptr = ft_uitoa_base((int) i, 16);
+		temp_ptr = ft_uitoa_base(i, 16);
 		retstr = temp_ptr;
 		while (*temp_ptr)
 			ft_toupper(temp_ptr++);
 	}
 	else
 	{
-		temp_ptr = ft_uitoa_base((int) i, 16);
+		temp_ptr = ft_uitoa_base((i, 16);
 		retstr = temp_ptr;
 	}
 	return (retstr);
