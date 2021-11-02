@@ -61,7 +61,9 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 	if (specifier == 'p')
 	{
 		p_ammend = (char *)malloc(sizeof(char) * 3);
-		p_ammend = "0x";
+		p_ammend[0] = '0';
+		p_ammend[1] = 'x';
+		p_ammend[2] = '\0';
 		retstr = ft_strjoin(p_ammend, temp_ptr);
 		free(p_ammend);
 		free(temp_ptr);
