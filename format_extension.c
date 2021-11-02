@@ -125,7 +125,7 @@ char	*right_fill(char *current_str, int i)
 			*retstr++ = *current_str++;
 		while (i > current_strlen++)
 			*retstr++ = ' ';
-		retstr = '\0';
+		*retstr = '\0';
 		free(copy_current);
 		return (copy_retstr);
 	}
