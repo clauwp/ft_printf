@@ -73,7 +73,7 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 	}
 	else
 	{
-		temp_ptr = ft_uitoa_base((i, 16);
+		temp_ptr = ft_uitoa_base(i, 16);
 		retstr = temp_ptr;
 	}
 	return (retstr);
