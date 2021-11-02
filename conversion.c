@@ -63,7 +63,6 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 		p_ammend = (char *)malloc(sizeof(char) * 3);
 		p_ammend = "0x";
 		retstr = ft_strjoin(p_ammend, temp_ptr);
-		printf("%s\n",retstr);
 		free(p_ammend);
 		free(temp_ptr);
 	}
