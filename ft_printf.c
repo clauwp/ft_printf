@@ -111,19 +111,15 @@ the number of character printed out
 int	write_null(void)
 {
 	char	*null_str;
-	char	*copy;
 	int		count;
 
-	null_str = (char *)malloc(sizeof(char) * 7);
 	count = 0;
-	copy = null_str;
 	null_str = "(null)";
 	while (*null_str)
 	{
 		count++;
 		write(1, null_str++, 1);
 	}
-	free(copy);
 	return (count);
 }
 

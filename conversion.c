@@ -60,12 +60,8 @@ char	*xXp_conversion(int specifier, unsigned long long i)
 	temp_ptr = ft_uitoa_base(i, 16);
 	if (specifier == 'p')
 	{
-		p_ammend = (char *)malloc(sizeof(char) * 3);
-		p_ammend[0] = '0';
-		p_ammend[1] = 'x';
-		p_ammend[2] = '\0';
+		p_ammend = "0x";
 		retstr = ft_strjoin(p_ammend, temp_ptr);
-		free(p_ammend);
 		free(temp_ptr);
 	}
 	else if (specifier == 'X')
