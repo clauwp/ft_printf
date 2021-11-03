@@ -7,9 +7,9 @@ i = argument from ft_printf parsed into integer data type
 @return
 a string that contains the character converted from an integer
 */
-char    *c_conversion(unsigned long long i)
+char	*c_conversion(unsigned long long i)
 {
-	char    *retstr;
+	char	*retstr;
 
 	retstr = (char *)malloc(sizeof(char) * 2);
 	if (retstr == NULL)
@@ -26,7 +26,7 @@ i = argument from ft_printf parsed into unsigned integer data type
 @return
 a string that contains the unsigned hexadecimal converted from an integer
 */
-char    *u_conversion(unsigned long long i)
+char	*u_conversion(unsigned long long i)
 {
 	return (ft_uitoa_base((unsigned int) i, 10));
 }
@@ -51,7 +51,7 @@ i = argument from ft_printf parsed into integer data type
 @return
 a string that contains the hexadecimal converted from an integer
 */
-char	*xXp_conversion(int specifier, unsigned long long i)
+char	*xp_conversion(int specifier, unsigned long long i)
 {
 	char	*retstr;
 	char	*temp_ptr;

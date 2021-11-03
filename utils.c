@@ -71,3 +71,24 @@ int	null_char_handler(char *str)
 	else
 		return (len);
 }
+
+/*
+Allocated space for a string that writes "(null)" when needed
+and write it to standard output when called.
+@return
+the number of character printed out
+*/
+int	write_null(void)
+{
+	char	*null_str;
+	int		count;
+
+	count = 0;
+	null_str = "(null)";
+	while (*null_str)
+	{
+		count++;
+		write(1, null_str++, 1);
+	}
+	return (count);
+}

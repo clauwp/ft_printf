@@ -1,7 +1,8 @@
 #include "ft_printf.h"
 
 /*
-Adding 0s(based on required precision) to the existing string after specifier conversion
+Adding 0s(based on required precision) to the existing string after
+specifier conversion
 @format : the format string containing format of conversion
 @current_str : current string after specifier conversion only
 Return : New string after appending 0s to obtain required precision
@@ -19,7 +20,8 @@ char	*add_precision(char *format, char *current_str)
 	if (ft_strlen(current_str) < precision)
 	{
 		i = 0;
-		temp = (char *)malloc(sizeof(char) * (precision - ft_strlen(current_str) + 1));
+		temp = (char *)malloc(sizeof(char) * \
+		(precision - ft_strlen(current_str) + 1));
 		while (ft_strlen(current_str) < precision--)
 			temp[i++] = '0';
 		temp[i] = '\0';
@@ -66,8 +68,10 @@ char	*add_precision_s(char *format, char *current_str)
 /*
 Append spaces or 0s to converted string for left/right justification
 @format : the format string containing format of conversion
-@current_str : current string after specifier and precision conversion only
-Return : New string after appending 0s and spaces according to '-' & '0' flag (if any)
+@current_str : current string after specifier and
+precision conversion only
+Return : New string after appending 0s and spaces according
+to '-' & '0' flag (if any)
 */
 char	*add_flags(char *format, char *current_str)
 {

@@ -4,20 +4,20 @@
 Main function that immitates the behaviour of printf from C standard library.
 Iters through each characters and processes it when it reaches '%' character.
 */
-int ft_printf(const char *format, ...)
+int	ft_printf(const char *format, ...)
 {
-    va_list ap;
+	va_list	ap;
 	char	*format_str;
 	int		printstr_len;
 
 	printstr_len = 0;
-    va_start(ap, format);
+	va_start(ap, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
 			format_str = get_format_str(format + 1);
-			format +=ft_strlen(format_str);
+			format += ft_strlen(format_str);
 			if (*format == 's')
 				printstr_len += (print_ptr(format_str, va_arg(ap, char *)) - 1);
 			else if (*format == '%')
@@ -49,7 +49,7 @@ char	*get_format_str(const char *str)
 	char	*copy_retstr;
 	int		len;
 
-	len  = 0;
+	len = 0;
 	while (is_flag(str[len]) || ft_isdigit(str[len]) || str[len] == '.')
 		len++;
 	if (is_specifier(str[len]))
@@ -67,8 +67,8 @@ char	*get_format_str(const char *str)
 }
 
 /*
-Writes a string of characters to standard output according to the format specified
-and the argument passed into ft_printf
+Writes a string of characters to standard output according to
+the format specified and the argument passed into ft_printf
 Parameter:
 @format_str = string that contains flag, width and specifier
 @ptr = a pointer to the corresponding argument passed in from fr_printf
@@ -96,27 +96,6 @@ int	print_ptr(char *format_str, char *str)
 	free(copy_str);
 	free(format_str);
 	return (retlen);
-}
-
-/*
-Allocated space for a string that writes "(null)" when needed
-and write it to standard output when called.
-@return
-the number of character printed out
-*/
-int	write_null(void)
-{
-	char	*null_str;
-	int		count;
-
-	count = 0;
-	null_str = "(null)";
-	while (*null_str)
-	{
-		count++;
-		write(1, null_str++, 1);
-	}
-	return (count);
 }
 
 /*
