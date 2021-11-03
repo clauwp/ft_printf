@@ -7,31 +7,30 @@ Iters through each characters and processes it when it reaches '%' character.
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	char	*format_str;
-	int		printstr_len;
+	char	*f_only;
+	int		len;
 
-	printstr_len = 0;
+	len = 0;
 	va_start(ap, format);
 	while (*format)
 	{
 		if (*format == '%')
 		{
-			format_str = get_format_str(format + 1);
-			format += ft_strlen(format_str);
-			if (*format == 's')
-				printstr_len += (print_ptr(format_str, va_arg(ap, char *)) - 1);
-			else if (*format == '%')
-				printstr_len += (print_ptr(format_str, "%") - 1);
+			f_only = get_format_str(format + 1);
+			format += ft_strlen(f_only);
+			if (*format == '%')
+				len += (myprint(f_only, (unsigned long long) "%", *format) - 1);
 			else
-				printstr_len += (print_int(format_str, va_arg(ap, unsigned long long), *format) - 1);
+				len += (myprint(f_only, va_arg(ap, unsigned long long), \
+				*format) - 1);
 		}
 		else
 			write(1, format, 1);
-		printstr_len++;
+		len++;
 		format++;
 	}
 	va_end(ap);
-	return (printstr_len);
+	return (len);
 }
 
 /*
@@ -76,11 +75,15 @@ Return:
 the total number of characters writen to standard output
 */
 
-int	print_ptr(char *format_str, char *str)
+int	myprint(char *format_str, unsigned long long i, char specifier)
 {
 	int		retlen;
 	char	*copy_str;
+	char	*str;
 
+	if (specifier != 's' && specifier != '%')
+		return (print_int(format_str, i, specifier));
+	str = (char *) i;
 	if (str == NULL)
 	{
 		free(format_str);

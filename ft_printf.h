@@ -16,7 +16,7 @@ char	*get_format_str(const char *str);
 int		is_flag(char c);
 int		is_specifier(char c);
 int		is_s_specifier(const char *str);
-int		print_ptr(char *format_str, char *ptr);
+int		myprint(char *format_str, unsigned long long ptr, char specifier);
 int		print_int(char *format_str, unsigned long long i, char specifier);
 char	*convert_arg_to_str(unsigned long long i, char specifier);
 char	*add_precision(char *format, char *current_str);
