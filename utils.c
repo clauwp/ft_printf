@@ -52,3 +52,22 @@ size_t	get_precision(char *format)
 		precision = 0;
 	return (precision);
 }
+
+/*
+To handle c specifier with argument 0
+*/
+int	null_char_handler(char *str)
+{
+	size_t	len;
+	size_t	i;
+
+	len = ft_strlen(str);
+	i = 1;
+	while (i++ < len)
+		write(1, str++, 1);
+	write(1, "\0", 1);
+	if (len == 0)
+		return (1);
+	else
+		return (len);
+}

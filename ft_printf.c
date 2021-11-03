@@ -19,17 +19,15 @@ int ft_printf(const char *format, ...)
 			format_str = get_format_str(format + 1);
 			format +=ft_strlen(format_str);
 			if (*format == 's')
-				printstr_len += print_ptr(format_str, va_arg(ap, char *));
+				printstr_len += (print_ptr(format_str, va_arg(ap, char *)) - 1);
 			else if (*format == '%')
-				printstr_len += print_ptr(format_str, "%");
+				printstr_len += (print_ptr(format_str, "%") - 1);
 			else
-				printstr_len += print_int(format_str, va_arg(ap, unsigned long long), *format);
+				printstr_len += (print_int(format_str, va_arg(ap, unsigned long long), *format) - 1);
 		}
 		else
-		{
 			write(1, format, 1);
-			printstr_len++;
-		}
+		printstr_len++;
 		format++;
 	}
 	va_end(ap);
@@ -78,18 +76,16 @@ Return:
 the total number of characters writen to standard output
 */
 
-int	print_ptr(char *format_str, void *ptr)
+int	print_ptr(char *format_str, char *str)
 {
 	int		retlen;
-	char	*str;
 	char	*copy_str;
 
-	if (ptr == NULL)
+	if (str == NULL)
 	{
 		free(format_str);
 		return (write_null());
 	}
-	str = (char *)ptr;
 	str = ft_strdup(str);
 	str = add_precision_s(format_str, str);
 	str = add_flags(format_str, str);
@@ -143,14 +139,14 @@ int	print_int(char *format_str, unsigned long long i, char specifier)
 	ret_str = add_precision(format_str, ret_str);
 	ret_str = add_flags(format_str, ret_str);
 	copy_retstr = ret_str;
-	retlen = ft_strlen(ret_str);
 	if (specifier == 'c' && i == 0)
+		retlen = null_char_handler(ret_str);
+	else
 	{
-		write(1, "\0", 1);
-		retlen = 1;
+		retlen = ft_strlen(ret_str);
+		while (*ret_str)
+			write(1, ret_str++, 1);
 	}
-	while (*ret_str)
-		write(1, ret_str++, 1);
 	free(copy_retstr);
 	free(format_str);
 	return (retlen);
