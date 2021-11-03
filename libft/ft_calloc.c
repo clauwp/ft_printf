@@ -11,7 +11,7 @@ void	*ft_calloc(size_t count, size_t size)
 	if (retval != NULL)
 	{
 		temp = retval;
-		while (bytes> 0)
+		while (bytes > 0)
 		{
 			*temp = 0;
 			bytes--;

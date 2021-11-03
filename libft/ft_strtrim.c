@@ -1,6 +1,7 @@
 /*
-Allocates (with malloc(3)) and returns a copy of ’s1’ with the characters specified
-in "set" removed from the beginning and the end of the string.
+Allocates (with malloc(3)) and returns a copy of ’s1’
+with the characters specified in "set" removed from
+the beginning and the end of the string.
 Parameter:
 1. string to trim
 2. reference set of characters to trim

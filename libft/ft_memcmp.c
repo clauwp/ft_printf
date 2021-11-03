@@ -11,7 +11,8 @@
 /* ************************************************************************** */
 
 /*
-compares the first n bytes (each interpreted as unsigned char) of the memory areas s1 and s2
+Compares the first n bytes (each interpreted as unsigned char)
+of the memory areas s1 and s2
 Return: 0 if n is zero or if s1 = s2, > 0 if s1>s2, <0 if s1<s2
 */
 #include "libft.h"
@@ -26,7 +27,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	while (n > 0)
 	{
 		if (*copy1 != *copy2 || *copy1 == 0 || *copy2 == 0)
-			return (*copy1- *copy2);
+			return (*copy1 - *copy2);
 		n--;
 	}
 	return (0);
