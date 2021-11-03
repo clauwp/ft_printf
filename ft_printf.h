@@ -10,7 +10,7 @@
 char	*c_conversion(unsigned long long i);
 char	*u_conversion(unsigned long long i);
 char	*id_conversion(unsigned long long i);
-char	*xXp_conversion(int specifier, unsigned long long i);
+char	*xp_conversion(int specifier, unsigned long long i);
 int		ft_printf(const char *format, ...);
 char	*get_format_str(const char *str);
 int		is_flag(char c);

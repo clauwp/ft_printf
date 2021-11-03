@@ -145,7 +145,7 @@ char	*convert_arg_to_str(unsigned long long i, char specifier)
 	else if (specifier == 'd' || specifier == 'i')
 		return (id_conversion(i));
 	else if (specifier == 'x' || specifier == 'X' || specifier == 'p')
-		return (xXp_conversion(specifier, i));
+		return (xp_conversion(specifier, i));
 	else if (specifier == 'u')
 		return (u_conversion(i));
 	return (NULL);
