@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: clau <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 08:58:50 by clau              #+#    #+#             */
+/*   Updated: 2021/11/04 08:58:51 by clau             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Allocates (with malloc(3)) and returns a substring from the string ’s’.
 The substring begins at index "start" and is of maximum size ’len’.

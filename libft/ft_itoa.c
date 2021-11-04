@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: clau <marvin@42.fr>                        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/04 08:47:28 by clau              #+#    #+#             */
+/*   Updated: 2021/11/04 08:47:31 by clau             ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 /*
 Allocates (with malloc(3)) and returns a string representing
 the integer received as an argument. Negative numbers must be handled.
